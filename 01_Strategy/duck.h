@@ -2,15 +2,17 @@
 #include "iflyable.h"
 #include "isoundable.h"
 
+#include <memory>
+
 class Duck
 {
 private:
-	IFlyable* m_flyable;
-	ISoundable* m_soundable;
+	std::unique_ptr<IFlyable> m_flyable;
+	std::unique_ptr<ISoundable> m_soundable;
 
 protected:
-	void setFlyable(IFlyable* flyable);
-	void setSoundable(ISoundable* soundable);
+	void setFlyable(std::unique_ptr<IFlyable> flyable);
+	void setSoundable(std::unique_ptr<ISoundable> soundable);
 
 public:
 	Duck();

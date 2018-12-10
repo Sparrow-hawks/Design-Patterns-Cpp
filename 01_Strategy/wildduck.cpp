@@ -8,8 +8,8 @@
 
 WildDuck::WildDuck()
 {
-	Duck::setFlyable(new BirdFly());
-	Duck::setSoundable(new Mop());
+	Duck::setFlyable(std::make_unique<BirdFly>());
+	Duck::setSoundable(std::make_unique<Mop>());
 }
 
 

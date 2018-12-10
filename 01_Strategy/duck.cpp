@@ -7,20 +7,19 @@ Duck::Duck()
 
 Duck::~Duck()
 {
-	delete m_flyable;
-	delete m_soundable;
+
 }
 
 
-void Duck::setFlyable(IFlyable* flyable)
+void Duck::setFlyable(std::unique_ptr<IFlyable> flyable)
 {
-	m_flyable = flyable;
+	m_flyable = std::move(flyable);
 }
 
 
-void Duck::setSoundable(ISoundable* soundable)
+void Duck::setSoundable(std::unique_ptr<ISoundable> soundable)
 {
-	m_soundable = soundable;
+	m_soundable = std::move(soundable);
 }
 
 
