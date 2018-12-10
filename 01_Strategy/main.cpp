@@ -6,13 +6,11 @@
 
 int main(int argc, char **argv)
 {
-	Duck *pDuck = new WildDuck();
+	std::unique_ptr<Duck> pDuck = std::make_unique<WildDuck>();
 
 	pDuck->show();
 	pDuck->executeFly();
 	pDuck->executeSound();
-
-	std::cin.get();
 
 	return 0;
 }

@@ -8,8 +8,8 @@
 
 RubberDuck::RubberDuck()
 {
-	Duck::setFlyable(new RocketFly());
-	Duck::setSoundable(new Silence());
+	Duck::setFlyable(std::make_unique<RocketFly>());
+	Duck::setSoundable(std::make_unique<Silence>());
 }
 
 
